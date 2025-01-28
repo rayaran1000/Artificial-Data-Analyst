@@ -1,6 +1,6 @@
 # Artificial Data Analyst
 
-![artificial_data_analyst_image](https://github.com/user-attachments/assets/0e4dcf5b-67ea-46d0-a833-e1bfcf9fb385)
+![Image](https://github.com/user-attachments/assets/bb7fc529-1221-41b6-9314-d96214a26d07)
 
 
 ## Project Overview
