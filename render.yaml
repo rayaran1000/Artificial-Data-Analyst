@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: frontend
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    buildCommand: docker build -t frontend ./frontend
+    startCommand: docker run -p $PORT:80 frontend
+    envVars:
+      - key: VITE_API_URL
+        value: "https://your-backend-url.onrender.com"
+
+  - type: web
+    name: backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    buildCommand: docker build -t backend .
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URL
+        value: mongodb+srv://aranyaray1998:T0KbFYiM3EQYCewW@artificialdataanalyst.vsagu.mongodb.net/?retryWrites=true&w=majority&authSource=admin&ssl=true&tlsAllowInvalidCertificates=true
+
+databases:
+  - name: mongodb
+    databaseName: your_database_name
+    plan: free 
